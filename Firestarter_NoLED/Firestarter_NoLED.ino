@@ -58,7 +58,7 @@ void loop() {
   bool safetyState = !digitalRead(safetyPin);
   bool burstState = !digitalRead(burstPin);
 
-  if (debug && doOnce){
+  if (debug && doOnce) {
     doOnce = false;
     Serial.println("flameOn: " + String(flameOn));
     Serial.println("safetyState: " + String(safetyState));
