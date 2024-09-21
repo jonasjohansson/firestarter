@@ -1,11 +1,13 @@
 #include <DmxSimple.h>
 
-const uint8_t dmxPin = 4;
-const uint8_t safetyPin = 7;
-const uint8_t flamePin = 8;
-const uint8_t burstPin = 9;
-const uint8_t safetyChannel = 1;
-const uint8_t flameChannel = 2;
+const uint8_t dmxPin = 4; // this is the pin used for DmxSimple as seen in function DmxSimple.usePin(). It is by default pin 3, but I am using pin 4.
+const uint8_t safetyPin = 7; // this is the pin used as safety, if I connect pin 7 to ground, the safety is OFF. This is so that I quickly can remove the pin to turn ON the safety
+const uint8_t flamePin = 8; // this is the pin used for sensing the state of the IR "flame" sensor
+const uint8_t burstPin = 9; // if this pin is connected to ground, the firestarter does burst of flames instead of a continouous flame.
+const uint8_t safetyChannel = 1; // this is the channel set on the DMX flame machine for safety
+const uint8_t flameChannel = 2; // this is the channel set on the DMX flame machine for the flame.
+
+// For some reason, at least on my DMX Shield, I have to connect RX0 to DE2. And my jumper pins are set to RX-io, TX-io, DE and EN.
 
 const unsigned int startupDelay = 1000;
 const unsigned int flameDuration = 1200;
